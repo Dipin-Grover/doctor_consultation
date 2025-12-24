@@ -51,6 +51,8 @@ app.use('/api/doctor', require('./routes/doctor'))
 app.use('/api/patient', require('./routes/patient'))
 app.use('/api/appointment', require('./routes/appointment'))
 app.use('/api/payment',require('./routes/payment'))
+app.use("/api/notifications", require("./routes/notifications"));
+
 
 app.get('/health', (req,res) => res.ok({time: new Date().toISOString()}, 'OK'))
 

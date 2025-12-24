@@ -12,6 +12,8 @@ import { usePathname, useRouter } from "next/navigation";
 import React from "react";
 import { Button } from "../ui/button";
 import { Badge } from "../ui/badge";
+import NotificationDropdown from "@/components/notifications/NotificationDropdown";
+
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -140,12 +142,8 @@ const goToSettings = () => {
 
         {isAuthenticated && showDashboardNav ? (
           <div className="flex items-center space-x-4">
-            <Button variant="ghost" size="sm" className="relative">
-              <Bell className="w-5 h-5" />
-              <Badge className="absolute -top-1 -right-1 w-5 h-5 text-xs bg-red-500 hover:bg-red-600">
-                4
-              </Badge>
-            </Button>
+            <NotificationDropdown />
+
 
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
